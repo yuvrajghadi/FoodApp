@@ -1,0 +1,27 @@
+{
+  "name": "foodapp-namastereact",
+  "version": "1.0.0",
+  "description": "This FoodApp by Yuvraj",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuvrajghadi/Food-Orderning-App.git"
+  },
+  "author": "Yuvraj Ghadi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuvrajghadi/Food-Orderning-App/issues"
+  },
+  "homepage": "https://github.com/yuvrajghadi/Food-Orderning-App#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
