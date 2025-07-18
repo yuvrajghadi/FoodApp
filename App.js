@@ -11,23 +11,44 @@ const Header = () => {
 
       </div>
       <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
+       <span className="nav-item">Home</span>
+       <span className="nav-item">About</span>  
+        <span className="nav-item">Contact</span>
+        <span className="nav-item">Cart</span>
       </div>
     </div>
   );
 };
 
+const Restocards=()=>{
+  return(
+    <div className="res-cards">
+      <img className="res-image" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D" alt="Restaurant Image"/>
+      <h3>MH07</h3>
+    </div>
+  )
+}
+
+
+
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="searchbar">Search</div>
+      <div className="res-container"><Restocards/></div>
+    </div>
+  );
+};
+
+
+
+
+
 const AppLayout = () => {
   return (
     <div className="app-layout">
       <Header />
-      <main>
-        {/* Other components will go here */}
-      </main>
+     <Body/>
     </div>
   );
 };
