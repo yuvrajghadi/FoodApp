@@ -1,40 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 
-
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo">
-        <img src="https://png.pngtree.com/png-clipart/20250218/original/pngtree-unique-food-logo-png-image_20457892.png" alt="Food Delivery Logo" />
-
-      </div>
-      <div className="nav-items">
-       <span className="nav-item">Home</span>
-       <span className="nav-item">About</span>  
-        <span className="nav-item">Contact</span>
-        <span className="nav-item">Cart</span>
-      </div>
-    </div>
-  );
-};
-
-const Restocards=(props)=>{
-  const { resData } = props;
-  const { image, name, description, rating, price, category } = resData;
-  return (
-    <div className="res-cards">
-      <img src={image} alt={name} />
-    <h2>{name}</h2>
-    <p>{description}</p>
-    <p>⭐ {rating} | ₹{price}</p>
-    <span>{category}</span>
-    </div>
-  );
-}
-
-const ResList =[
+export const ResList =[
   {
     id: 1,
     name: "Margherita Pizza",
@@ -144,43 +109,3 @@ const ResList =[
     description: "Corn tortillas filled with marinated pork, pineapple, and cilantro."
   }
 ];
-
-
-
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search-container">
-        <input className="searchbar" type="text" placeholder="Search restaurants..." />
-      </div>
-
-      <div className="main-content">
-        <div className="res-container">
-          {
-          ResList.map((Data) => (
-            <Restocards key={Data.id} resData={Data} />
-          ))
-          }
-        </div>
-      </div>
-    </div> 
-  );
-};
-
-
-
-
-
-
-const AppLayout = () => {
-  return (
-    <div className="app-layout">
-      <Header />
-     <Body/>
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
