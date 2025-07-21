@@ -146,3 +146,42 @@ html, body {
   border-radius: 6px;
 margin: 0 11px;
 }
+
+.filter-btn {
+  padding: 10px 20px;
+  background-color: #ff914d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.filter-btn:hover {
+  background-color: #ff7722; /* darker orange on hover */
+  transform: translateY(-2px);
+}
+
+.filter-btn:active {
+  background-color: #e25c00;
+  transform: scale(0.98);
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 999;
+  flex-wrap: wrap;
+}

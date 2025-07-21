@@ -1,5 +1,5 @@
 
-export const ResList =[
+export const ResList1 =[
   {
     id: 1,
     name: "Margherita Pizza",
