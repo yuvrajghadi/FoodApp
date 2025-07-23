@@ -1,41 +1,44 @@
 import Restocards from "./Restocards";
 import { useEffect, useState } from "react";
-
+import Shimmer from "./Shimmer";
 
 const Body = () => {
+  const [ResList, setResList] = useState([]);
+  
+  const [loading, setLoading] = useState(true); // ✅ Add this line
 
-const [ResList, setResList] = useState([])
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-useEffect(() => {
-  fetchData()
-}, []);
-
-
-const fetchData = async () => {
+ const fetchData = async () => {
   try {
-    const data = await fetch(
-      "https://api.allorigins.win/raw?url=" +
-        encodeURIComponent(
-          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0330&lng=73.0297&page_type=DESKTOP_WEB_LISTING"
-        )
-    );
+    const swiggyURL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.6141396&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+    const proxyURL = "https://api.allorigins.win/raw?url=" + encodeURIComponent(swiggyURL);
 
-    const json = await data.json();
-    console.log(json);
+    const response = await fetch(proxyURL);
 
-    const restaurantList =
-      json?.data?.cards?.find(
-        (card) =>
-          card?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      )?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+
+    const json = await response.json();
+    console.log("Fetched JSON:", json);
+
+    const restaurantList = json?.data?.cards?.find(
+      (card) => card?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    )?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
     setResList(restaurantList || []);
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Fetch error:", error);
+    setResList([]); // fallback to empty
+  } finally {
+    setLoading(false);
   }
 };
+if (loading) return <Shimmer />;
 
-
+  if (ResList.length === 0) return <Shimmer />;
+  
   return (
     <div className="body">
       <div className="search-container">
@@ -44,19 +47,26 @@ const fetchData = async () => {
           type="text"
           placeholder="Search restaurants..."
         />
-        <button className="filter-btn" onClick={() => {
-            const filtered = ResList.filter(item => item.rating >= 4.5);
+        <button
+          className="filter-btn"
+          onClick={() => {
+            // ✅ Fixed: Corrected filtering logic using item.info.avgRating
+            const filtered = ResList.filter(
+              (item) => item.info.avgRating >= 4.5
+            );
             setResList(filtered);
-        }}>Top Rated Restaurants</button>
+          }}
+        >
+          Top Rated Restaurants
+        </button>
       </div>
 
       <div className="main-content">
-        <div className="res-container">
-         {ResList.map((Data) => (
-  <Restocards key={Data.info.id} resData={Data.info} />
-))}
-
-        </div>
+        {
+          ResList.map((Data) => (
+            <Restocards key={Data.info.id} resData={Data.info} />
+          ))
+        }
       </div>
     </div>
   );
