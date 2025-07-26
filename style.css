@@ -40,6 +40,7 @@ html, body {
 .nav-items {
   display: flex;
   gap: 24px;
+   align-items: center;
 }
 
 /* Navigation items */
@@ -48,12 +49,39 @@ html, body {
   font-size: 18px;
   text-decoration: none;
   cursor: pointer;
+ 
   transition: color 0.3s ease;
 }
 
 .nav-item:hover {
   color: #ffd700;
 }
+
+.login {
+  background-color: #ff6b00; /* Swiggy orange */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.login:hover {
+  background-color: #e65c00;
+  transform: translateY(-1px);
+}
+
+.login:active {
+  background-color: #cc4f00;
+  transform: scale(0.98);
+}
+
+
+
 
 /* Wrapper to center the search bar */
 .search-container {
@@ -256,7 +284,7 @@ margin: 0 11px;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-     margin: 95px 0;
+     margin: 100px 0;
   padding: 20px;
   justify-content: center;
   align-items: flex-start;
@@ -265,16 +293,19 @@ margin: 0 11px;
 }
 
 .shimmer-card {
-  background: #fff;
   border: 1px solid #ddd;
-  border-radius: 5px;
-
-  padding: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 380px;
-  width: 250px;
-
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 240px;
+  height: 380px; /* Fixed height for uniformity */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  margin: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  transition: transform 0.2s ease-in-out;
 }
 
 .shimmer-img {
@@ -315,3 +346,4 @@ margin: 0 11px;
 .shimmer-line {
   animation: shimmer-pulse 1.5s infinite ease-in-out;
 }
+
