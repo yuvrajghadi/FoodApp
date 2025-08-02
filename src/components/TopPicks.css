@@ -1,0 +1,90 @@
+.top-picks-section {
+  padding: 20px;
+}
+
+.top-picks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.top-picks-header h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.arrows button {
+  font-size: 20px;
+  margin-left: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.arrows button:hover {
+  background-color: #ddd;
+}
+
+.top-picks-carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 8px;
+}
+
+.top-picks-carousel::-webkit-scrollbar {
+  display: none; /* hide scrollbar */
+}
+
+.dish-card {
+    background: #fff;
+    border-radius: 15px;
+    min-width: 290px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px #0000001a;
+    height: 300px;
+}
+.dish-card img {
+    object-fit: fill;
+  
+}
+
+.dish-info {
+  padding: 10px;
+}
+
+.dish-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.dish-price {
+  color: #333;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.add-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background-color: white;
+  border: 2px solid #0f9d58;
+  color: #0f9d58;
+  padding: 6px 16px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #0f9d58;
+  color: white;
+}

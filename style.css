@@ -7,7 +7,7 @@ html, body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #00000000;
-  overflow: hidden; /* Prevent full page scroll */
+  overflow-y: auto; /* ✅ Enables vertical scroll */
 }
 
 /* Header container with blur and transparency */
@@ -347,3 +347,15 @@ margin: 0 11px;
   animation: shimmer-pulse 1.5s infinite ease-in-out;
 }
 
+/* Make entire card clickable without blue link styles */
+/* Remove blue color and underline from Link */
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+/* Optional: Make the entire link block-level for layout */
+.link:hover {
+  text-decoration: none;
+}

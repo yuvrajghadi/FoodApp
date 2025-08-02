@@ -1,0 +1,67 @@
+.menu-container {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+}
+
+.menu-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 60%;
+  margin-top: 70px;
+  
+}
+
+.menu-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #282c3f;
+}
+
+.menu-subtitle {
+  font-size: 16px;
+  color: #686b78;
+  margin-bottom: 6px;
+}
+
+.menu-cost {
+  font-size: 15px;
+  color: #535665;
+  margin-bottom: 20px;
+}
+
+.menu-section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #3e4152;
+  border-top: 1px solid #e9e9eb;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.hotel-details {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #fff; /* Optional */
+}
+
+
+.bar {
+  height: 10px;
+  background-color: #f1ecec;
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 2px;
+}
+
+.item-name {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
