@@ -9,13 +9,13 @@ const useRestaurantList = () => {
 
   useEffect(() => {
     fetchData(); // ✅ Call fetchData when component mounts
-  }, [ResList]);
+  }, []);
 
   const fetchData = async () => {
     try {
       // ✅ Added Swiggy API URL with lat/lng params
       const swiggyURL =
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.6141396&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9966135&lng=77.5920581&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
       
       // ✅ Added proxy to bypass CORS restrictions
       const proxyURL = "https://api.allorigins.win/raw?url=" + encodeURIComponent(swiggyURL);

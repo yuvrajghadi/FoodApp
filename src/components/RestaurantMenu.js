@@ -4,9 +4,9 @@ import "./RestaurantMenu.css";
 import Deals from "./Deals";
 import Manusearch from "./Manusearch";
 import TopPicks from "./TopPicks";
-import MenuItem from "./MenuItem"
 import { useParams } from "react-router-dom"; 
 import useRestraurantMenu from "../utils/useRestaurantManu";
+import RestaurantCategory from "./RestaurantCategory";
 
 
 const RestaurantMenu = () => {
@@ -25,17 +25,21 @@ const RestaurantMenu = () => {
     totalRatingsString,
     areaName,
   } = menuData?.cards?.[2]?.card?.card?.info || {};
-  const {slaString} =
-    menuData?.cards?.[2]?.card?.card?.info?.sla?.slaString || "";
-
+//   const {slaString} =
+//     menuData?.cards?.[2]?.card?.card?.info?.sla?.slaString || "";
+//     console.log(menuData?.cards?.[2]?.card?.card?.info)
+// console.log("SLA String:", slaString);
     const itemCards =
   menuData?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]?.card?.card?.itemCards || [];
 
-    console.log("Items Cards:", itemCards);
+  const categories = menuData?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(c=>c?.card?.card?.["@type"]==
+    "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  ) || [];
+  console.log("categories:", categories);
 
   return (
     <div className="menu-container">
-      <div className="menu-card">
+      <div className="menu-card ">
         <h1 className="menu-title">{name}</h1>
 <div className="hotel-details">
         <p className="menu-rating">
@@ -45,14 +49,14 @@ const RestaurantMenu = () => {
       <p>{cuisines?.join(", ") || "N/A"}</p>
 
         <p>{areaName}</p>
-        <p>{slaString}</p>
+      
         </div>
         <Deals />
         <Manusearch />
         <TopPicks />
         <div className="bar"></div>
-        {itemCards.map((item) => (
-          <MenuItem className="res-card-link" key={item?.card?.info?.id} item={item} />
+        {categories.map((category, index) => (
+          <RestaurantCategory className="res-card-link" key={index} data={category?.card?.card} />
         ))}
       </div>
     </div>

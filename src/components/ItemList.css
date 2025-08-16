@@ -1,0 +1,280 @@
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 16px;
+}
+
+.menu-item-info {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.veg-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+
+
+.item-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+
+.item-price {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 4px 0;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.star {
+  color: green;
+  font-weight: 600;
+}
+
+.rating-count {
+  color: gray;
+  margin-left: 4px;
+}
+
+.item-description {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+  max-width: 90%;
+}
+
+.menu-item-image {
+  display: flex;
+  
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-item-image img {
+  width: 110px;
+  height: 110px;
+  object-fit: fill;
+  border-radius: 8px;
+}
+
+.add-btn {
+  margin-top: 8px;
+  padding: 4px 16px;
+  border: 1.5px solid green;
+  color: green;
+  font-weight: 600;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #f0fdf4;
+}
+
+.customisable {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+/* Container for all items */
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Each menu item row */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 16px;
+}
+
+/* Left section: text info */
+.menu-item-info {
+  flex: 1;
+  padding-right: 20px;
+}
+
+/* Veg/Non-veg outer box */
+.veg-indicator {
+  width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+/* Inner green dot for veg */
+
+
+/* Inner red dot for non-veg */
+
+
+/* Name styling */
+.item-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+
+/* Price styling */
+.item-price {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 4px 0;
+}
+
+/* Rating container */
+.rating {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+/* Star rating in green */
+.star {
+  color: green;
+  font-weight: 600;
+}
+
+/* Rating count in gray */
+.rating-count {
+  color: gray;
+  margin-left: 4px;
+}
+
+/* Description text */
+.item-description {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+  max-width: 90%;
+}
+
+/* Right section: image + button */
+.menu-item-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Image size */
+.menu-item-image img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Add button styling */
+.add-btn {
+  margin-top: 8px;
+  padding: 4px 16px;
+  border: 1.5px solid green;
+  color: green;
+  font-weight: 600;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #f0fdf4;
+}
+
+/* Customisable label */
+.customisable {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+.menu-item-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 140px;
+  height: 129px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* ADD button overlay */
+.add-btn {
+    color: green;
+    width: 55px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1.5px solid green;
+    border-radius: 6px;
+    padding: 3px 0px;
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.add-btn:hover {
+  background-color: #f0fdf4;
+}
+
+.customisable {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+.image-wrapper {
+  transition: transform 0.2s ease-in-out;
+}
+
+.image-wrapper:hover {
+  transform: scale(1.05);
+}
+
+
+.image-wrapper {
+  display: inline-block;
+  transform-origin: center;
+}
