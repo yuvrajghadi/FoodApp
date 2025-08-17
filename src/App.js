@@ -3,15 +3,14 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
 // import Contact from "./components/Contact";
-import React,{Suspense} from "react";
+import React, { Suspense } from "react";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 // import "../style.css"; // adjust if needed
 
-
-const Contact = React.lazy(() => import("./components/Contact")); // Lazy loading Contact component
-
+// Lazy load Contact
+const Contact = React.lazy(() => import("./components/Contact"));
 
 const AppLayout = () => {
   return (
@@ -26,7 +25,7 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    errorElement: <Error />, // ✅ MOVE errorElement to the top-level route
+    errorElement: <Error />,
     children: [
       {
         path: "",
@@ -38,7 +37,12 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "contact",
-        element: <Contact />,
+        element: (
+          // ✅ Wrap lazy component in Suspense
+          <Suspense fallback={<h1>Loading Contact Page...</h1>}>
+            <Contact />
+          </Suspense>
+        ),
       },
       {
         path: "restaurant/:resId",
