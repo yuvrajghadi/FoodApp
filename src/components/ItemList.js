@@ -1,6 +1,14 @@
 import "./ItemList.css";
+import { useDispatch } from "react-redux";
+import { addItems } from "./../utils/cartSlice";
 
 const ItemList = ({ items }) => {
+const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    dispatch(addItems(item));
+  }
+
   return (
     <div className="item-list">
       {items.map((item, index) => {
@@ -59,7 +67,7 @@ const ItemList = ({ items }) => {
   {image && (
     <div className="image-wrapper">
       <img src={image} alt={info.name} />
-      <button className="add-btn">ADD</button>
+      <button className="add-btn" onClick={() => handleAddItem(item)}>ADD</button>
     </div>
   )}
   <span className="customisable">Customisable</span>

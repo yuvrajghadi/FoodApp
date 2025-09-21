@@ -1,8 +1,9 @@
-
 import Restocards from "./Restocards";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [ResList, setResList] = useState([]);
@@ -19,7 +20,8 @@ const Body = () => {
     try {
       const swiggyURL =
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.6141396&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-      const proxyURL = "https://api.allorigins.win/raw?url=" + encodeURIComponent(swiggyURL);
+      const proxyURL =
+        "https://api.allorigins.win/raw?url=" + encodeURIComponent(swiggyURL);
 
       const response = await fetch(proxyURL);
 
@@ -34,7 +36,6 @@ const Body = () => {
       setResList(restaurantList || []);
       setAllResList(restaurantList || []);
     } catch (error) {
-      
       console.error("Fetch error:", error);
       setResList([]);
     } finally {
@@ -45,8 +46,8 @@ const Body = () => {
     if (isFiltered) {
       setResList(allResList);
     } else {
-      const filtered = allResList.filter((item) =>
-        parseFloat(item.info.avgRating) >= 4.5
+      const filtered = allResList.filter(
+        (item) => parseFloat(item.info.avgRating) >= 4.5
       );
       setResList(filtered);
     }
@@ -62,6 +63,8 @@ const Body = () => {
     setResList(filtered);
   };
 
+  // const [loginuser, setUserName] = useContext(UserContext);
+
   if (loading) return <Shimmer />;
 
   return (
@@ -73,21 +76,26 @@ const Body = () => {
           value={searchText}
           placeholder="Search restaurants..."
           onChange={handleSearch}
-          
         />
         <button className="filter-btn" onClick={handleFilterClick}>
           {isFiltered ? "Show All Restaurants" : "Top Rated Restaurants"}
         </button>
       </div>
+        
 
+    
       <div className="main-content">
         {ResList.length === 0 ? (
           <h2 style={{ textAlign: "center" }}>No restaurants found!</h2>
         ) : (
           ResList.map((Data) => (
-           <Link className="link" key={Data.info.id} to={"/restaurant/" + Data.info.id}>
-             <Restocards  resData={Data.info} />
-           </Link>
+            <Link
+              className="link"
+              key={Data.info.id}
+              to={"/restaurant/" + Data.info.id}
+            >
+              <Restocards resData={Data.info} />
+            </Link>
           ))
         )}
       </div>
@@ -96,16 +104,3 @@ const Body = () => {
 };
 
 export default Body;
-
-
-
-
-
-
-
-
-
-
-
-
-
