@@ -1,108 +1,7 @@
 .item-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-}
-
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 16px;
-}
-
-.menu-item-info {
-  flex: 1;
-  padding-right: 20px;
-}
-
-.veg-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 4px;
-}
-
-
-
-.item-name {
-  font-size: 18px;
-  font-weight: 600;
-  color: #222;
-  margin: 0;
-}
-
-.item-price {
-  font-size: 16px;
-  font-weight: 500;
-  margin: 4px 0;
-}
-
-.rating {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  margin: 4px 0;
-}
-
-.star {
-  color: green;
-  font-weight: 600;
-}
-
-.rating-count {
-  color: gray;
-  margin-left: 4px;
-}
-
-.item-description {
-  font-size: 14px;
-  color: #666;
-  margin-top: 4px;
-  max-width: 90%;
-}
-
-.menu-item-image {
-  display: flex;
-  
-  flex-direction: column;
-  align-items: center;
-}
-
-.menu-item-image img {
-  width: 110px;
-  height: 110px;
-  object-fit: fill;
-  border-radius: 8px;
-}
-
-.add-btn {
-  margin-top: 8px;
-  padding: 4px 16px;
-  border: 1.5px solid green;
-  color: green;
-  font-weight: 600;
-  border-radius: 6px;
-  background-color: white;
-  cursor: pointer;
-}
-
-.add-btn:hover {
-  background-color: #f0fdf4;
-}
-
-.customisable {
-  font-size: 12px;
-  color: #aaa;
-  margin-top: 4px;
-}
-
-/* Container for all items */
-.item-list {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem; /* 24px */
 }
 
 /* Each menu item row */
@@ -110,101 +9,111 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 16px;
+  border-bottom: 0.0625rem solid #e5e5e5; /* 1px */
+  padding-bottom: 1rem; /* 16px */
 }
 
 /* Left section: text info */
 .menu-item-info {
   flex: 1;
-  padding-right: 20px;
+  padding-right: 1.25rem; /* 20px */
 }
 
-/* Veg/Non-veg outer box */
+/* Veg/Non-veg indicator */
 .veg-indicator {
-  width: 16px;
-  height: 16px;
-
+  width: 1rem;  /* 16px */
+  height: 1rem; /* 16px */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 6px;
+  margin-bottom: 0.375rem; /* 6px */
 }
 
-/* Inner green dot for veg */
-
-
-/* Inner red dot for non-veg */
-
-
-/* Name styling */
+/* Item name */
 .item-name {
-  font-size: 18px;
+  font-size: 1.125rem; /* 18px */
   font-weight: 600;
   color: #222;
   margin: 0;
 }
 
-/* Price styling */
+/* Item price */
 .item-price {
-  font-size: 16px;
+  font-size: 1rem; /* 16px */
   font-weight: 500;
-  margin: 4px 0;
+  margin: 0.25rem 0; /* 4px 0 */
 }
 
-/* Rating container */
+/* Rating */
 .rating {
   display: flex;
   align-items: center;
-  font-size: 14px;
-  margin: 4px 0;
+  font-size: 0.875rem; /* 14px */
+  margin: 0.25rem 0; /* 4px */
 }
 
-/* Star rating in green */
 .star {
   color: green;
   font-weight: 600;
 }
 
-/* Rating count in gray */
 .rating-count {
   color: gray;
-  margin-left: 4px;
+  margin-left: 0.25rem; /* 4px */
 }
 
-/* Description text */
+/* Description */
 .item-description {
-  font-size: 14px;
+  font-size: 0.875rem; /* 14px */
   color: #666;
-  margin-top: 4px;
+  margin-top: 0.25rem; /* 4px */
   max-width: 90%;
 }
 
-/* Right section: image + button */
+/* Right section (image + button) */
 .menu-item-image {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Image size */
-.menu-item-image img {
-  width: 110px;
-  height: 110px;
-  object-fit: cover;
-  border-radius: 8px;
+/* Image wrapper */
+.image-wrapper {
+  position: relative;
+  width: 8.75rem;   /* 140px */
+  height: 8.0625rem; /* 129px */
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 0.2s ease-in-out;
 }
 
-/* Add button styling */
-.add-btn {
-  margin-top: 8px;
-  padding: 4px 16px;
-  border: 1.5px solid green;
-  color: green;
-  font-weight: 600;
-  border-radius: 6px;
-  background-color: white;
+.image-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   cursor: pointer;
+  border-radius: 0.5rem; /* 8px */
+}
+
+/* Add button */
+.add-btn {
+  color: green;
+  width: 3.4375rem; /* 55px */
+  cursor: pointer;
+  background-color: #fff;
+  border: 0.09375rem solid green; /* 1.5px */
+  border-radius: 0.375rem; /* 6px */
+  padding: 0.1875rem 0; /* 3px 0 */
+  font-size: 0.875rem; /* 14px */
+  font-weight: 600;
+  position: absolute;
+  bottom: 0.1875rem; /* 3px */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .add-btn:hover {
@@ -213,68 +122,7 @@
 
 /* Customisable label */
 .customisable {
-  font-size: 12px;
+  font-size: 0.75rem; /* 12px */
   color: #aaa;
-  margin-top: 4px;
-}
-
-.menu-item-image {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.image-wrapper {
-  position: relative;
-  width: 140px;
-  height: 129px;
-}
-
-.image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-/* ADD button overlay */
-.add-btn {
-    color: green;
-    width: 55px;
-    cursor: pointer;
-    background-color: #fff;
-    border: 1.5px solid green;
-    border-radius: 6px;
-    padding: 3px 0px;
-    font-size: 14px;
-    font-weight: 600;
-    position: absolute;
-    bottom: 3px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.add-btn:hover {
-  background-color: #f0fdf4;
-}
-
-.customisable {
-  font-size: 12px;
-  color: #aaa;
-  margin-top: 4px;
-}
-
-.image-wrapper {
-  transition: transform 0.2s ease-in-out;
-}
-
-.image-wrapper:hover {
-  transform: scale(1.05);
-}
-
-
-.image-wrapper {
-  display: inline-block;
-  transform-origin: center;
+  margin-top: 0.25rem; /* 4px */
 }
